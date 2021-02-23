@@ -15,6 +15,8 @@ import Directive from './directive'
 import regex from './utils/regex'
 import dayjs from 'dayjs'
 import VueClipboard from 'vue-clipboard2'
+// 多语言
+import i18n from './i18n/i18n'  
 // 皮肤
 import SkinPretty from './skins/pretty/index'
 // 皮肤集合
@@ -185,6 +187,7 @@ export default {
     // 创建根实例
     const vm = new Vue({
       router,
+      i18n,
       store,
       render: h => h('nm-skins')
     }).$mount('#app')

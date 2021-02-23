@@ -3,6 +3,7 @@
     <template v-for="t in customToolbars">
       <component :key="t" :is="`nm-toolbar-${t}`" />
     </template>
+    <nm-change-lang v-if="toolbar.changelang"/>
     <nm-skin-toggle v-if="toolbar.skin" />
     <nm-userinfo v-if="toolbar.userInfo" />
     <nm-fullscreen v-if="toolbar.fullscreen" />
@@ -15,9 +16,10 @@ import NmFullscreen from './components/fullscreen'
 import NmLogout from './components/logout'
 import NmSkinToggle from './components/skin-toggle'
 import NmUserinfo from './components/userInfo'
+import NmChangeLang from './components/changeLang'
 export default {
   name: 'Toolbar',
-  components: { NmFullscreen, NmLogout, NmSkinToggle, NmUserinfo },
+  components: { NmFullscreen, NmLogout, NmSkinToggle, NmUserinfo,NmChangeLang },
   computed: {
     ...mapState('app/config', { toolbar: s => s.component.toolbar }),
     ...mapState('app/system', { customToolbars: s => s.customToolbars })

@@ -1,7 +1,7 @@
 <template>
   <nm-box page>
     <el-row>
-      <nm-button text="默认按钮"></nm-button>
+      <nm-button >{{ $t('test.defaultButton') }}</nm-button>
       <nm-button type="primary" text="主要按钮"></nm-button>
       <nm-button type="success" text="成功按钮"></nm-button>
       <nm-button type="info" text="信息按钮"></nm-button>

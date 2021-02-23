@@ -1,12 +1,13 @@
 <template>
   <el-dropdown class="nm-list-select-column" :size="fontSize" trigger="click" :hide-on-click="false" @visible-change="onVisible">
     <span>
-      选择列
+      <!--选择列-->
+      {{$t('unified.selectcolumn')}}
       <i class="el-icon--right" :class="[visible ? 'el-icon-arrow-up' : 'el-icon-arrow-down']"></i>
     </span>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item>
-        <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
+        <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange"><!--全选-->{{$t('unified.CheckAll')}}</el-checkbox>
       </el-dropdown-item>
       <el-checkbox-group v-model="selection" @change="change">
         <el-dropdown-item v-for="col in columns" :key="col.name">

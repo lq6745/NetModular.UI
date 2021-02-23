@@ -102,7 +102,7 @@
         <!-- 操作列 -->
         <el-table-column v-if="!noOperation" :width="operationWidth" fixed="right" align="center" label="操作">
           <template v-slot:header>
-            <slot name="col-operation-header">操作</slot>
+            <slot name="col-operation-header"><!--操作-->{{ $t('unified.operation')}}</slot>
           </template>
           <template slot-scope="{ row }">
             <div class="nm-list-operation">

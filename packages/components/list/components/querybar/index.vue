@@ -3,18 +3,22 @@
   <section class="nm-list-querybar">
     <nm-form ref="normalForm" class="nm-list-querybar-normal" :model="model_" :rules="rules" :size="fontSize" :inline="true">
       <slot />
+      <!--查询-->
       <el-form-item v-if="!noSearch">
-        <nm-button type="primary" @click="query" :icon="!noSearchButtonIcon ? 'search' : ''" text="查询" />
+        <nm-button type="primary" @click="query" :icon="!noSearchButtonIcon ? 'search' : ''" :text="$t('unified.query')" />
       </el-form-item>
+      <!--重置-->
       <el-form-item v-if="!noReset">
-        <nm-button type="info" @click="reset" :icon="!noSearchButtonIcon ? 'refresh' : ''" text="重置" />
+        <nm-button type="info" @click="reset" :icon="!noSearchButtonIcon ? 'refresh' : ''" :text="$t('unified.reset')" />
       </el-form-item>
+      <!--导出-->
       <el-form-item v-if="exportEnabled" v-nm-has="exportBtnCode">
-        <nm-button type="primary" @click="onExport" icon="export" text="导出" />
+        <nm-button type="primary" @click="onExport" icon="export" :text="$t('unified.export')" />
       </el-form-item>
       <el-form-item v-if="advanced_.enabled">
         <nm-button ref="showAdvnacedBtn" type="warning" @click="onAdvancedClick">
-          高级查询
+          <!--高级查询-->
+          {{$t('unified.Advancedquery')}}
           <i class="el-icon--right" :class="[showAdvanced ? 'el-icon-arrow-up' : 'el-icon-arrow-down']"></i>
         </nm-button>
       </el-form-item>
@@ -27,7 +31,7 @@
     <!--高级查询框-->
     <transition name="el-zoom-in-top">
       <section ref="advancedBox" class="nm-list-querybar-advanced" v-if="advanced_.enabled" v-show="showAdvanced" :style="advancedStyle">
-        <nm-box page header footer title="高级查询" icon="search">
+        <nm-box page header footer :title="$t('unified.Advancedquery')" icon="search">
           <template v-slot:toolbar>
             <nm-button icon="close" @click="showAdvanced = false" />
           </template>
@@ -37,9 +41,9 @@
           </nm-form>
           <template v-slot:footer>
             <!--查询按钮-->
-            <nm-button type="primary" @click="query" text="查询" :icon="!noSearchButtonIcon ? 'search' : ''" />
+            <nm-button type="primary" @click="query" :text="$t('unified.query')" :icon="!noSearchButtonIcon ? 'search' : ''" />
             <!--重置按钮-->
-            <nm-button type="info" @click="reset" text="重置" :icon="!noSearchButtonIcon ? 'refresh' : ''" />
+            <nm-button type="info" @click="reset" :text="$t('unified.reset')" :icon="!noSearchButtonIcon ? 'refresh' : ''" />
           </template>
         </nm-box>
         <div ref="arrow" class="advanced-arrow" />

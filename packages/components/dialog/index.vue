@@ -48,7 +48,7 @@
         <div class="nm-form-footer-right">
           <slot name="footer" />
           <!--底部关闭按钮-->
-          <nm-button type="info" v-if="footerCloseButton" text="关闭" @click="close" />
+          <nm-button type="info" v-if="footerCloseButton" :text="$t('unified.Close')" @click="close" />
         </div>
       </section>
     </section>

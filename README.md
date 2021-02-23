@@ -11,3 +11,8 @@ Password: admin
 ## Documentation(文档)
 
 For full documentation please see [https://docs.17mkh.com/](https://docs.17mkh.com/)
+
+
+## 添加多语言
+
+npm install vue-i18n

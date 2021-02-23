@@ -36,7 +36,9 @@ const getUI = () => {
           // 退出
           logout: true,
           // 用户信息
-          userInfo: true
+          userInfo: true,
+          //多语言
+          changelang: true
         },
         //菜单
         menu: {
